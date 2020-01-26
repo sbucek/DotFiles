@@ -89,7 +89,7 @@ alias hd2="cd /run/media/nox/backup"
 alias appcfg.py="/home/nox/Apps/google-cloud-sdk/platform/google_appengine/appcfg.py"
 alias sys='sudo dmidecode | grep -A 9 "System Information"'
 alias ctf="cd /usr/share/themes/Numix-Frost/gnome-shell && gedit gnome-shell.css"
-alias c="killall conky && conky & disown"
+alias c="killall conky && conky & disown && exit"
 
 alias config='/usr/bin/git --git-dir=/home/nox/.cfg/ --work-tree=/home/nox'
 alias yay='yay --aur'

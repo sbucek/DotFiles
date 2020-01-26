@@ -1,0 +1,45 @@
+
+decoration {
+   box-shadow: 0 7px 7px black;
+}
+
+/* .menu {
+
+box-shadow: 0 7px 7px black;
+background-color: black;
+} */
+
+
+
+
+
+/*
+headerbar.default-decoration {
+ padding-top: 0px;
+ padding-bottom: 0px;
+ min-height: 0px;
+ font-size: 0.6em;
+}
+
+headerbar.default-decoration button.titlebutton {
+ padding: 0px;
+ min-height: 0px;
+}
+*/
+
+/* decoration
+{
+   border-radius: 6px 6px 0 0;
+   border-width: 0px;
+   box-shadow: 0 14px 18px black, 0 10px 10px black;
+    margin: 4px;
+}
+
+decoration:backdrop
+ {
+    border-radius: 6px 6px 0 0;
+    border-width: 0px;
+    box-shadow: 0 14px 18px black, 0 10px 10px black, 0 30px 20px black;
+ margin: 4px;
+ } */
+

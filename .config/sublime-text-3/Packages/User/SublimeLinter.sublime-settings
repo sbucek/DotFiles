@@ -1,0 +1,91 @@
+// SublimeLinter Settings - User
+{
+        // Provide extra paths to be searched when locating system executables.
+    "paths": {
+        "linux": [
+            "/home/nox/.nvm/versions/node/v6.7.0/bin/",
+            "/usr/bin/",
+            "/home/nox/code/go/bin/",
+            "/home/nox/.nvm",
+            "/home/nox/.rvm/gems/ruby-2.4.1/bin/"
+        ],
+        "osx": [],
+        "windows": []
+    },
+
+
+
+
+    "gutter_theme": "Default",
+
+
+    // Example of linter specific settings.
+    // Linter specific settings can also be changed in sublime-project settings.
+    // What settings are available is documented in the readme of the
+    // specific linter plugin.
+    // "linters": {
+    //     "somelinter": {
+    //         "disable": false,
+    //         "args": [],
+    //         "excludes": []
+    //     },
+    //     "somepythonlinter": {
+    //         "python": null,
+    //         "disable": false,
+    //         "args": [
+    //             "--max-complexity", "-1",
+    //             "--max-line-length", "100",
+    //             "--ignore", "E731,E402"
+    //         ],
+    //         "excludes": [],
+    //     }
+    // }
+    "linters": {
+
+        "gometalinter": {
+            "disable": false,
+            "args": [
+/*                "--disable=gotype"
+*/
+],
+            "excludes": []
+
+        },
+
+
+          "jshint": {
+    "disable": false,
+    "args": [],
+    "excludes": [],
+    "env": {
+      "PATH": "/home/nox/.nvm/versions/node/v6.7.0/bin:$PATH"
+    }
+  }
+
+
+
+    },
+
+    // Show the output panel on save if there are problems.
+    // Note: currently works best with lint_mode "background", See #1200
+    // Set to "window" to check if the window has problems.
+    // Set to "view" to only check the current file.
+    // Set to "never" to disable this feature.
+    "show_panel_on_save": "never",
+
+    // Maps variant syntaxes to the syntax that you have a linter for.
+    // The syntax is the name of the syntax definition file, in lower case
+    // Run this in the console to find it: view.settings().get('syntax').lower()
+    "syntax_map": {
+        "html (django)": "html",
+        "html (rails)": "html",
+        "html 5": "html",
+        "javascript (babel)": "javascript",
+        "magicpython": "python",
+        "php": "html",
+        "python django": "python",
+        "gosublime-html": "html",
+        "pythonimproved": "python"
+    }
+
+}

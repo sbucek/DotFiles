@@ -1,0 +1,129 @@
+{
+
+    // you may set specific environment variables here
+    // e.g "env": { "PATH": "$HOME/go/bin:$PATH" }
+    // in values, $PATH and ${PATH} are replaced with
+    // the corresponding environment(PATH) variable, if it exists.
+/*    "shell": ["/bin/zsh", "--login", "-c", "$CMD"],*/
+
+    "env": {"GOPATH":"/home/nox/code/go"},
+
+    "fmt_cmd":["goimports", "-srcdir", "$_dir"],
+
+    // enable comp-lint, this will effectively disable the live linter
+    "comp_lint_enabled":true,
+
+    // list of commands to run
+    //
+    //
+    //
+/*    "comp_lint_commands": [
+        // run `golint` on all files in the package
+        // "shell":true is required in order to run the command through your shell (to expand `*.go`)
+        // also see: the documentation for the `shell` setting in the default settings file ctrl+dot,ctrl+4
+        {"cmd": ["golint *.go"], "shell": true},
+
+        // run go vet on the package
+        {"cmd": ["go", "vet"]},
+
+        // run `go install` on the package. GOBIN is set,
+        // so `main` packages shouldn't result in the installation of a binary
+        {"cmd": ["go", "install"]},
+     {"cmd": ["go", "run *.go"]}
+    ],
+*/
+    // list of commands to run
+    //
+    //
+    //
+
+
+
+
+/*    "comp_lint_commands": [
+        {"cmd": ["goimports -w $_fn"] , "shell": true},
+        {"cmd": ["golint $_fn"], "shell": true},
+        {"cmd": ["go", "vet"]},
+        {"cmd": ["goconst $_dir"], "shell": true},
+        {"cmd": ["usedexports $_dir"], "shell": true},
+        {"cmd": ["ineffassign $_fn"], "shell": true},
+    ],*/
+
+
+
+"on_save":
+    [{
+        "cmd": "gs9o_open", "args": {
+            "run": ["clear"],
+            "focus_view": false
+        }
+    },
+    {
+        "cmd": "gs9o_open", "args": {
+            "run": ["sh", "go build -i"],
+            "focus_view": false
+        }
+    },
+    {
+        "cmd": "gs9o_open", "args": {
+            "run": ["sh", "go vet"],
+            "focus_view": false
+        }
+    },
+    {
+        "cmd": "gs9o_open", "args": {
+            "run": ["golint", "."],
+            "focus_view": false
+        }
+    },
+        {
+        "cmd": "gs9o_open", "args": {
+            "run": ["sleep 3 ; go clean"],
+            "focus_view": false
+        }
+    },
+
+
+
+/*{
+        "cmd": "gs9o_open", "args": {
+            "run": ["gometalinter", "."],
+            "focus_view": false
+        }
+}*/
+
+
+
+
+/*        {
+        "cmd": "gs9o_open", "args": {
+            "run": ["ineffassign $_fn"],
+            "focus_view": false
+        }
+    },
+
+
+
+    {"cmd": "gs_comp_lint"},
+        {"cmd": "go install"}*/
+],
+
+
+/*    "on_save": [{
+    "cmd": "gs9o_open", "args": {
+    "run": ["sh",
+        "go build . errors && go test -i && go test && go vet && golint *.go && go run *.go"],
+    "focus_view": false
+}}],
+*/
+
+
+
+
+    "autocomplete_closures": true,
+    "autocomplete_suggest_imports": true,
+    "complete_builtins": true
+}
+
+
+

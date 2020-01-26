@@ -1,0 +1,175 @@
+# THIS CONFIG RELIES ON 2 SCRIPTS, CPUSPEED AND CPUTEMP
+# YOUR SYSTEM MAY NOT REQUIRE THEM, REPLACE AS DESIRED
+
+# maintain spacing between certain elements
+use_spacer right
+
+# set to yes if you want conky to be forked in the background
+background no
+
+use_xft yes
+
+# Xft font when Xft is enabled
+#xftfont Bitstream Vera Sans Mono-8
+xftfont Ubuntu :size=8
+
+# Text alpha when using Xft
+xftalpha 1
+#mail_spool $MAIL
+
+# Update interval in seconds
+update_interval 1.5
+
+# Create own window instead of using desktop (required in nautilus)
+
+own_window yes
+
+own_window_type conky
+own_window_transparent yes
+own_window_hints undecorated,below,sticky,skip_taskbar,skip_pager
+
+own_window_argb_visual yes
+own_window_argb_value 255
+
+# Use double buffering (reduces flicker, may not work for everyone)
+double_buffer yes
+
+# Minimum size of text area
+minimum_size 310 600
+
+maximum_width 135
+#min_port_monitors 100
+
+# Draw shades?
+draw_shades no
+#default_shade_color black
+
+# Draw outlines?
+draw_outline no # amplifies text
+
+# Draw borders around text
+draw_borders no
+draw_graph_borders no
+
+# Stippled borders?
+stippled_borders 0
+
+# border margins
+#border_margin 9
+
+# border width
+#border_width 1
+
+# Default colors and also border colors, grey90 == #e5e5e5
+default_color grey90
+default_shade_color black
+default_outline_color DarkGrey
+
+# Text alignment, other possible values are commented
+#alignment top_left
+alignment top_right
+#alignment bottom_left
+#alignment bottom_right
+
+# Gap between borders of screen and text
+#gap_x 5
+#gap_y 40
+
+gap_x 0
+gap_y 30
+
+# Subtract file system buffers from used memory?
+no_buffers yes
+
+# set to yes if you want all text to be in uppercase
+uppercase no
+
+# stuff after 'TEXT' will be formatted on screen
+
+TEXT
+# ${font DejaVu Sans:size=14}$alignc${time %T}${font}
+# ${time %A, %e. %B %Y}
+# $hr
+${color #ffcb48}$kernel $color
+#${color #ffcb48}Xorg:$alignr$color${exec xdpyinfo | awk '/version:/ { print $NF }'}
+${color #ffcb48}Uptime:$color$alignr$uptime
+${color #ffcb48}Load:$color$alignr$loadavg
+${color #ffcb48}Intel C2D:$color$alignr${freq_g cpu0}Ghz
+${color #ffcb48}All Proc:$alignr$color$processes   Run: $running_processes
+#$hr
+#${color #ffcb48}PROCESSING$color${color #E7881B}
+${cpugraph cpu0}
+C0 ${cpu cpu0}% ${cpubar cpu0}
+C1 ${cpu cpu1}% ${cpubar cpu1}
+C2 ${cpu cpu2}% ${cpubar cpu2}
+$color
+${color #98c2c7}Name   ${alignr}cpu% mem% $color
+${top name 1} $alignr${top cpu 1}  $alignr${top mem 1}
+${top name 2} $alignr${top cpu 2}  $alignr${top mem 2}
+${top name 3} $alignr${top cpu 3}  $alignr${top mem 3}
+${top name 4} $alignr${top cpu 4}  $alignr${top mem 4}
+${top name 5} $alignr${top cpu 5}  $alignr${top mem 5}
+
+${color #fdff1d}RAM: $memperc% $mem/ $memmax $color
+${color #fdff1d}${membar }${color}
+${color #fdff1d}Swap: $swapperc% $swap / $swapmax $color
+${color #fdff1d}${swapbar }$color
+
+${color #98c2c7}W: ${fs_used /run/media/nox/win10}/${fs_size /run/media/nox/win10} $alignr${fs_used_perc /run/media/nox/win10}% $color
+${color #78af78}${fs_bar /run/media/nox/win10}$color
+${color #98c2c7}R: ${fs_used /}/${fs_size /} $alignr${fs_used_perc /}% $color
+${color #78af78}${fs_bar /}$color
+${color #98c2c7}H: ${fs_used /home}/${fs_size /home} $alignr${fs_used_perc /home}% $color
+${color #78af78}${fs_bar /home}$color
+${color #517ea9}B: ${fs_used /run/media/nox/backup}/${fs_size /run/media/nox/backup} $alignr${fs_used_perc /run/media/nox/backup}% $color
+${color #517ea9}${fs_bar /run/media/nox/backup}$color
+${if_existing /run/media/nox/29120af2-ef0b-4d26-a85c-38c5b9270d90/}
+${color #FA6600}SG: ${fs_used /run/media/nox/29120af2-ef0b-4d26-a85c-38c5b9270d90}/${fs_size /run/media/nox/29120af2-ef0b-4d26-a85c-38c5b9270d90} $alignr${fs_used_perc /run/media/nox/29120af2-ef0b-4d26-a85c-38c5b9270d90}% $color
+${color #FA6600}${fs_bar /run/media/nox/29120af2-ef0b-4d26-a85c-38c5b9270d90}$color${endif}${if_existing /run/media/nox/dc7c9120-8ff0-4727-b58f-c7da663ee15c/}
+${color #FA6600}WD: ${fs_used /run/media/nox/dc7c9120-8ff0-4727-b58f-c7da663ee15c}/${fs_size /run/media/nox/dc7c9120-8ff0-4727-b58f-c7da663ee15c} $alignr${fs_used_perc /run/media/nox/dc7c9120-8ff0-4727-b58f-c7da663ee15c}% $color
+${color #FA6600}${fs_bar /run/media/nox/dc7c9120-8ff0-4727-b58f-c7da663ee15c}$color
+${endif}
+Disk I/O:${alignr 39}${diskio}
+${diskiograph 10,0 FFFFFF FFFFFF -l}
+# Network
+${if_existing /proc/net/route wlo1}
+${color #9eeae0}U:  ${upspeed wlo1}${color #fcef02}${goto 78}${alignr}D: ${downspeed wlo1}
+${color #9eeae0}${upspeedgraph wlo1 20,60 9eeae0 9eeae0}${goto 78}${color #fcef02}${downspeedgraph wlo1 20,60 fcef02 fcef02}
+${color #9eeae0}${totalup wlo1}${color #fcef02}${goto 78}${alignr}${totaldown wlo1}
+${endif}
+${if_existing /proc/net/route enp3s0}
+${color #9eeae0}U:  ${upspeed enp3s0}${color #fcef02}${goto 78}${alignr}D: ${downspeed enp3s0}
+${color #9eeae0}${upspeedgraph enp3s0 20,60 9eeae0 9eeae0}${goto 78}${color #fcef02}${downspeedgraph enp3s0 20,60 fcef02 fcef02}
+${color #9eeae0}${totalup enp3s0}${color #fcef02}${goto 78}${alignr}${totaldown enp3s0}
+${endif}Dropbox: ${execi 10 du -Lsh /home/nox/Dropbox | awk '{print $1}' }
+Users: $user_number
+
+# Battery: ${execi 30 acpi -b | grep "Battery 0:" | cut -c18-24}
+C1: $alignr${execi 4 sensors | grep "Core 0:" | cut -c17-24}
+C2: $alignr${execi 4 sensors | grep "Core 1:" | cut -c17-24}
+#T1: $alignr${execi 4 sensors | grep -m 1 "temp1:" | cut -c15-22}
+#T2: $alignr${execi 4 sensors | grep "temp2:" | cut -c14-23}
+T3: $alignr${execi 4 sensors | grep "temp3:" | cut -c15-22}
+T4: $alignr${execi 4 sensors | grep "temp4:" | cut -c15-23}
+T5: $alignr${execi 4 sensors | grep "temp5:" | cut -c15-23}
+T6: $alignr${execi 4 sensors | grep "temp6:" | cut -c14-23}
+# Radeon: $alignr${execi 4 sensors | grep -m 2 "temp1:" | tail -n1}
+${execi 10  curl -s "https://api.coinmarketcap.com/v1/ticker/" -o ~/Apps/conky-crypto-coins/rates.json}\
+
+#${execi 10  curl -s "https://www.bitstamp.net/api/v2/ticker/ethbtc" -o ~/conky-crypto-coins/rates1.json}\
+
+${color #D6582B}LTC  ${alignr}${execi 0  echo "scale=3; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "LTC") | .price_usd')/1" | bc}
+BTC  ${alignr}${execi 0 echo "scale=3; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "BTC") | .price_usd')/1" | bc}
+ETH  ${alignr}${execi 0 echo "scale=3; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "ETH") | .price_usd')/1" | bc}
+BNB  ${alignr}${execi 0  echo "scale=4; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "BNB") | .price_usd')/1" | bc}
+EOS  ${alignr}${execi 0  echo "scale=3; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "EOS") | .price_usd')/1" | bc}
+XRP  ${alignr}${execi 0  echo "scale=3; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "XRP") | .price_usd')/1" | bc}
+VET  ${alignr}${execi 0  echo "scale=4; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "VET") | .price_usd')/1" | bc}
+NANO ${alignr}${execi 0  echo "scale=3; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "NANO") | .price_usd')/1" | bc}
+ZIL  ${alignr}${execi 0  echo "scale=4; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "ZIL") | .price_usd')/1" | bc}
+XMR  ${alignr}${execi 0  echo "scale=4; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "XMR") | .price_usd')/1" | bc}
+DASH ${alignr}${execi 0  echo "scale=3; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "DASH") | .price_usd')/1" | bc}
+LINK ${alignr}${execi 0  echo "scale=3; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "LINK") | .price_usd')/1" | bc}
+NEO ${alignr}${execi 0  echo "scale=3; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "NEO") | .price_usd')/1" | bc}
+ICON ${alignr}${execi 0  echo "scale=3; $(cat ~/Apps/conky-crypto-coins/rates.json | jq -r '.[] | select(.symbol == "ICX") | .price_usd')/1" | bc}
+#ETH/BTC ${alignr}${execi 0  echo "scale=3; $(cat ~/conky-crypto-coins/rates1.json | jq -r '.{} | select( "last") | /1" | bc}

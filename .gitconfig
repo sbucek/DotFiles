@@ -8,7 +8,7 @@
 # user {{{
 [user]
     email = sbucek@gmail.com
-    name = sibu
+	name = SiBu
 
 #}}}
 # include sendemail config {{{

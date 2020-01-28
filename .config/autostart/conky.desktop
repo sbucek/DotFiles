@@ -1,0 +1,18 @@
+[Desktop Entry]
+Hidden=false
+Exec=sh "/home/nox/.config/autostart/start_conky.sh"
+Icon=
+Type=Application
+NoDisplay=false
+Version=1.0
+StartupNotify=true
+StartupWMClass=
+GenericName[en_US]=
+Comment=
+DBusActivatable=false
+Terminal=false
+Name=Conky
+GenericName=
+Icon[en_US]=
+Name[en_US]=Conky
+Comment[en_US]=

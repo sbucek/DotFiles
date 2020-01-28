@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Chromium Black
+Comment=Browse the World Wide Web
+GenericName=Web Browser
+X-GNOME-FullName=Chromium Web Browser
+Exec=/usr/bin/chromium --force-dark-mode %U
+Terminal=false
+Type=Application
+Icon=chromium
+Categories=Network;WebBrowser;

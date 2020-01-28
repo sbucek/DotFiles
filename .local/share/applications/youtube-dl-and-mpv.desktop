@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=play video using youtube-dl and mpv
+Exec=bash -c 'mpv "$(youtube-dl -f best -g -- "$(zenity --entry --text "URL")")"'
+Icon=mpv
+Terminal=false
+StartupNotify=false
+Type=Application

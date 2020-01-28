@@ -44,7 +44,7 @@ filebrowser.sidebar_width 220
 filebrowser.sort_treeview 1
 filebrowser.treelines 0
 gtkui.autoresize_columns 1
-gtkui.columns.playlist [{"title":"Album Art","id":"8","format":"","sort_format":"","size":"55","align":"2","color_override":"0","color":"#ffd4d4d4"},{"title":"Playing","id":"1","format":"","sort_format":"","size":"27","align":"0","color_override":"0","color":"#ffd4d4d4"},{"title":"Item Index","id":"0","format":"","sort_format":"","size":"43","align":"0","color_override":"0","color":"#ffd4d4d4"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"180","align":"0","color_override":"0","color":"#ffd4d4d4"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"43","align":"0","color_override":"0","color":"#ffd4d4d4"}]
+gtkui.columns.playlist [{"title":"Album Art","id":"8","format":"","sort_format":"","size":"54","align":"2","color_override":"0","color":"#ffd4d4d4"},{"title":"Playing","id":"1","format":"","sort_format":"","size":"26","align":"0","color_override":"0","color":"#ffd4d4d4"},{"title":"Item Index","id":"0","format":"","sort_format":"","size":"42","align":"0","color_override":"0","color":"#ffd4d4d4"},{"title":"Title","id":"-1","format":"%title%","sort_format":"","size":"176","align":"0","color_override":"0","color":"#ffd4d4d4"},{"title":"Duration","id":"-1","format":"%length%","sort_format":"","size":"42","align":"0","color_override":"0","color":"#ffd4d4d4"}]
 gtkui.layout.0.6.2 vsplitter locked=0 ratio=0.441253 pos=0 size2=0 {hsplitter locked=0 ratio=0.249245 pos=0 size2=0 {coverart {} vsplitter locked=0 ratio=0.284024 pos=0 size2=0 {musical_spectrum {} pltbrowser {} } } tabs active=1 num_tabs=4 tab000="File browser" tab001="Playlist with tabs" tab002="Selection properties" tab003="Log viewer" {filebrowser {} tabbed_playlist hideheaders=0 width=677 {} selproperties {} logviewer {} } } 
 gtkui.playlist.group_by_tf "%artist%"
 gtkui.pltbrowser.show_duration_column 1
@@ -105,8 +105,8 @@ logwindow.geometry.x 0
 logwindow.geometry.y 28
 mainwin.geometry.h 418
 mainwin.geometry.w 679
-mainwin.geometry.x 557
-mainwin.geometry.y 1242
+mainwin.geometry.x 655
+mainwin.geometry.y 1245
 musical_spectrum.alignment 0
 musical_spectrum.bar_delay 0
 musical_spectrum.bar_falloff -1
@@ -173,7 +173,7 @@ prefwin.geometry.x 746
 prefwin.geometry.y 161
 resume.paused 1
 resume.playlist 0
-resume.position 64.000000
+resume.position 66.786407
 resume.track 2
 spectrogram.color.gradient_00 65535 0 0
 spectrogram.color.gradient_01 65535 32896 0

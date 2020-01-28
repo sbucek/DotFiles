@@ -1,0 +1,7 @@
+[Desktop Entry]
+Categories=AudioVideo;Audio;Video;Player;TV
+Comment=Sttream Rt America Youtube
+Exec=/usr/bin/mpv 'https://youtu.be/jRhYIu-TEcs'
+Icon=mpv
+Name=RT America
+Type=Application

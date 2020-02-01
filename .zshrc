@@ -78,7 +78,8 @@ peek() { tmux split-window -p 33 $EDITOR $@ || exit; }
 
 # Aliases
 alias dus="du -sckx * | sort -nr"
-alias mup="gcloud components update && upgrade_oh_my_zsh && flutter upgrade && cd ~/code/go/src/github.com/sbucek/0 && find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \; && cd"
+alias glu='curl -sfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh\ | sh -s -- -b $(go env GOPATH)/bin latest'
+alias mup="glu && gcloud components update && upgrade_oh_my_zsh && flutter upgrade && cd ~/code/go/src/github.com/sbucek/0 && find . -mindepth 1 -maxdepth 1 -type d -print -exec git -C {} pull \; && cd"
 alias mup2="gem update && npm update -g"
 alias py2="cd /usr/bin && sudo ln -sf python2 python && ls -l python && cd && python -V"
 alias topf="find -type f -exec du -Sh {} + | sort -rh | head -n 10"

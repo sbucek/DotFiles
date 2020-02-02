@@ -93,6 +93,7 @@ alias ctf="cd /usr/share/themes/Numix-Frost/gnome-shell && gedit gnome-shell.css
 alias c="killall conky && conky & disown && exit"
 
 alias gbk='cd ~/Documents && dconf dump / > saved_settings.dconf && cd ~'
+alias grbk='cd ~/Documents && dconf load / < saved_settings.dconf && cd ~'
 alias config='/usr/bin/git --git-dir=/home/nox/.cfg/ --work-tree=/home/nox'
 alias yay='yay --aur'
 

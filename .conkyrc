@@ -138,10 +138,10 @@ ${color #9eeae0}${upspeedgraph wlo1 20,60 9eeae0 9eeae0}${goto 78}${color #fcef0
 ${color #9eeae0}${totalup wlo1}${color #fcef02}${goto 78}${alignr}${totaldown wlo1}
 ${endif}
 ${if_existing /proc/net/route enp3s0}
-${color #9eeae0}U:  ${upspeed enp3s0}${color #fcef02}${goto 78}${alignr}D: ${downspeed enp3s0}
-${color #9eeae0}${upspeedgraph enp3s0 20,60 9eeae0 9eeae0}${goto 78}${color #fcef02}${downspeedgraph enp3s0 20,60 fcef02 fcef02}
-${color #9eeae0}${totalup enp3s0}${color #fcef02}${goto 78}${alignr}${totaldown enp3s0}
-${endif}Dropbox: ${execi 10 du -Lsh /home/nox/Dropbox | awk '{print $1}' }
+${color #06B3B3}U:  ${upspeed enp3s0}${color #FFA300}${goto 78}${alignr}D: ${downspeed enp3s0}
+${color #06B3B3}${upspeedgraph enp3s0 20,60 #06B3B3 #06B3B3}${goto 78}${color #FFA300}${downspeedgraph enp3s0 20,60 #FFA300 #FFA300}
+${color #06B3B3}${totalup enp3s0}${color #FFA300}${goto 78}${alignr}${totaldown enp3s0}
+${endif}${color #fdff1d}Dropbox: ${execi 10 du -Lsh /home/nox/Dropbox | awk '{print $1}' }
 Users: $user_number
 
 # Battery: ${execi 30 acpi -b | grep "Battery 0:" | cut -c18-24}
